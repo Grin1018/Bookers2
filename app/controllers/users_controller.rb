@@ -20,10 +20,10 @@ end
   else
     render :edit
   end
-end
+  end
 
   private
   def user_params
-    params.require(:user).permit(:title, :body, :image)
+    params.require(:user).permit(:name, :introduction, :image)
   end
 end
