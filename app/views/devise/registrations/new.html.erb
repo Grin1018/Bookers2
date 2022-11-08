@@ -1,4 +1,10 @@
+<main>
+  <p id="notice"></p>
+  <diq class="container">
+  <div class ="row">
+    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0">
 <h2>Sign up</h2>
+<form id="new_user" class="new_user" action="/users" accept-charset="UTF-8" method="post">
 
 <%= form_with model: @user, url: user_registration_path do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
@@ -27,8 +33,23 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <input type="submit" name="commit" value="Sign up" class="btn btn-sm btn-success" data-disable-with="Sign up">
+    </div>
+    </form>
+    <%#= f.submit "Sign up" %>
+  <%= render "devise/shared/links" %><br>
   </div>
-<% end %>
+  </div>
+  </div>
+  <% end %>
+  </main>
 
-<%= render "devise/shared/links" %>
+  <footer>
+  <div class="container mt-5">
+    <div class="row">
+      <div class="mx-auto">
+        <p>CopyRight Infratop.inc</p>
+        </div>
+        </div>
+        </div>
+        </footer>
