@@ -5,7 +5,11 @@ def new
 end
 
   def show
-    @user
+    @user = User.find(params[:id])
+  end
+
+  def index
+   @user = current_user
   end
 
   def edit
