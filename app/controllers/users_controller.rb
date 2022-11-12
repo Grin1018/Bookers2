@@ -6,10 +6,15 @@ end
 
   def show
     @user = User.find(params[:id])
+    @book = Book.new
+    @books = @user.books
+    @users = User.all
   end
 
   def index
-   @user = current_user
+    @user = current_user
+    @users = User.all
+    @book = Book.new
   end
 
   def edit
@@ -20,6 +25,7 @@ end
     @user= User.find(params[:id])
     @user.update(user_params)
   if current_user.update(user_params)
+     flash[:notice] = "You have updated user successfully."
     redirect_to user_path(@user.id)
   else
     render :edit
