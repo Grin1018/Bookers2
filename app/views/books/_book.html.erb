@@ -1,5 +1,5 @@
  <% if @book.errors.any? %>
-  <%= @book.errors.count %>errors prohibited this obj from being saved
+  <h3><%= @book.errors.count %>errors prohibited this obj from being saved:</h3>
   <ul>
     <% @book.errors.full_messages.each do |message| %>
       <li><%= message %></li>
@@ -9,11 +9,7 @@
 
 <h1>User info</h1>
 
-<% if user.image.attached? %>
-<%= image_tag user.image, size: "100x100" %>
-<% else %>
-<%= image_tag 'noimage', size: "100x100" %>
-<% end %>
+  <%= image_tag user.get_profile_image(100,100) %>
 
 <table class = "table">
 <tbody>

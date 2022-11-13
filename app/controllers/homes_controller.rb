@@ -2,6 +2,6 @@ class HomesController < ApplicationController
   def top
   end
 
-  def new
+  def about
   end
 end
